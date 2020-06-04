@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-const crypto = require("crypto");
+const crypto = require("crypto-js");
 const { v1: uuidv1 } = require("uuid");
 uuidv1();
 var Schema = mongoose.Schema;
@@ -30,7 +30,7 @@ var userSchema = new Schema(
     //TODO Come back here
     encry_password: {
       type: String,
-      trim: true,
+      required: true,
     },
     salt: String,
     role: {
